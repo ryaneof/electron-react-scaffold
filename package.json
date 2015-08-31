@@ -1,6 +1,6 @@
 {
   "name": "electron-react-scaffold",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Just another scaffold.",
   "main": "index.js",
   "repository": {
