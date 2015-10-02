@@ -61,7 +61,7 @@ gulp.task('copypaste', function () {
   });
 });
 
-gulp.task('compile', ['copypaste', 'clean', 'script', 'style'], function () {
+gulp.task('compile', ['clean', 'copypaste', 'script', 'style'], function () {
   mkdirp('./compile/', function () {
     return gulp.src([
       './app/index.html',
