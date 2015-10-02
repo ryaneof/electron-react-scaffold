@@ -8,13 +8,21 @@
 
 ```
 node -v
-v2.5.0
+v4.1.0
+
+electron -v
+v0.33.4
 ```
 
 ## Start
 
 ```
 npm install
+npm install -g electron-prebuilt
+
+// or if you have installed electron-prebuilt
+
+npm update -g electron-prebuilt
 ```
 
 ## Debug
