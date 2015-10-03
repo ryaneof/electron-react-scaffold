@@ -4,7 +4,7 @@
 [![DevDependencies](https://david-dm.org/ryaneof/electron-react-scaffold/dev-status.svg)](https://david-dm.org/ryaneof/electron-react-scaffold#info=devDependencies)
 
 
-## Requirement (iojs)
+## Requirements
 
 ```
 node -v
