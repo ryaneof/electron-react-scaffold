@@ -7,6 +7,7 @@ var gls = require('gulp-live-server');
 var del = require('del');
 var mkdirp = require('mkdirp');
 var source = require('vinyl-source-stream');
+var runSequence = require('run-sequence');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -55,22 +56,29 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copypaste', function () {
-  mkdirp('./compile/', function () {
-    return gulp.src('./package.json')
-      .pipe(gulp.dest('./compile/'));
+  return mkdirp('./compile/', function () {
+    return gulp.src([
+      './package.json',
+      './node_modules/**/*'
+    ], {
+      base: './'
+    })
+    .pipe(gulp.dest('./compile/'));
   });
 });
 
-gulp.task('compile', ['clean', 'copypaste', 'script', 'style'], function () {
-  mkdirp('./compile/', function () {
-    return gulp.src([
-      './app/index.html',
-      './app/index.js',
-      './app/css/**/*',
-      './app/js/**/*'
-    ], {
-      base: './app/'
-    }).pipe(gulp.dest('./compile/'));
+gulp.task('compile', function () {
+  runSequence('clean', 'copypaste', 'script', 'style', function () {
+    return mkdirp('./compile/', function () {
+      return gulp.src([
+        './app/index.html',
+        './app/index.js',
+        './app/css/**/*',
+        './app/js/**/*'
+      ], {
+        base: './app/'
+      }).pipe(gulp.dest('./compile/'));
+    });
   });
 });
 

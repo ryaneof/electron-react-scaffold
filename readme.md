@@ -8,10 +8,10 @@
 
 ```
 node -v
-v4.1.0
+v4.2.1
 
 electron -v
-v0.33.4
+v0.33.8
 ```
 
 ## Start

@@ -1,6 +1,6 @@
 {
   "name": "electron-react-scaffold",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Just another scaffold.",
   "main": "index.js",
   "repository": {
@@ -10,8 +10,8 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development ./node_modules/.bin/gulp debug",
-    "dist": "NODE_ENV=development ./node_modules/.bin/gulp compile && ./node_modules/.bin/electron-packager ./compile/ Electron-React-Scaffold --out=dist --ignore=dist --asar --platform=darwin --arch=x64 --overwrite --version=0.33.4",
-    "build": "NODE_ENV=production ./node_modules/.bin/gulp compile && ./node_modules/.bin/electron-packager ./compile/ Electron-React-Scaffold --out=dist --ignore=dist --prune --asar --all --overwrite --version=0.33.4"
+    "dist": "NODE_ENV=development ./node_modules/.bin/gulp compile && ./node_modules/.bin/electron-packager ./compile/ Electron-React-Scaffold --out=dist --ignore=dist --asar --platform=darwin --arch=x64 --overwrite --version=0.33.8",
+    "build": "NODE_ENV=production ./node_modules/.bin/gulp compile && ./node_modules/.bin/electron-packager ./compile/ Electron-React-Scaffold --out=dist --ignore=dist --prune --asar --all --overwrite --version=0.33.8"
   },
   "files": [
     "index.js",
@@ -19,30 +19,29 @@
     "index.css"
   ],
   "engines": {
-    "electron": "0.33.4",
-    "atom-shell": "0.33.4"
+    "electron": "0.33.8",
+    "atom-shell": "0.33.8"
   },
   "dependencies": {
+    "babel": "^5.8.23",
     "director": "^1.2.8",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "run-sequence": "^1.1.4"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "del": "^2.0.2",
     "electron-connect": "^0.3.3",
     "electron-debug": "^0.2.1",
     "electron-packager": "^5.1.0",
-    "electron-prebuilt": "^0.30.8",
     "gulp": "^3.9.0",
-    "gulp-concat": "~2.6.0",
-    "gulp-if": "^1.2.5",
-    "gulp-install": "^0.5.0",
+    "gulp-if": "^2.0.0",
+    "gulp-install": "^0.6.0",
     "gulp-live-server": "0.0.28",
     "gulp-minify-css": "~1.2.0",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "~1.4.0",
+    "gulp-uglify": "^1.4.2",
     "mkdirp": "^0.5.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "~1.1.0",
