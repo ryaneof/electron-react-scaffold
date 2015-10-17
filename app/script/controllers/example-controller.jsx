@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ExampleComponent = require('../components/views/example-component.jsx');
 var DefaultTemplate = require('../components/templates/default-template.jsx');
 
@@ -8,7 +9,7 @@ module.exports = {
   },
 
   render: function () {
-    React.render(
+    ReactDOM.render(
       <DefaultTemplate>
         <ExampleComponent />
       </DefaultTemplate>,

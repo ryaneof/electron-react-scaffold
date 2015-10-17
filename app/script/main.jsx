@@ -1,5 +1,4 @@
 var Router = require('director').Router;
-var React = require('react');
 var remote = window.require('remote');
 
 // routes
