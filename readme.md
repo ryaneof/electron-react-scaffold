@@ -11,7 +11,7 @@ node -v
 v4.2.1
 
 electron -v
-v0.34.0
+v0.34.1
 ```
 
 ## Start
