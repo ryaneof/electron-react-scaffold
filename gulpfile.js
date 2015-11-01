@@ -25,7 +25,7 @@ gulp.task('script', function () {
   });
 
   b.transform(babelify.configure({
-    optional: ['es7.asyncFunctions', 'es7.classProperties']
+    presets: ['es2015', 'react']
   }));
 
   return b.bundle()

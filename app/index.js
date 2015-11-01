@@ -3,7 +3,7 @@
 const app = require('app');
 const BrowserWindow = require('browser-window');
 
-require('babel/register');
+require('babel-core/register');
 
 // report crashes to the Electron project
 // require('crash-reporter').start();
