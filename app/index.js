@@ -11,7 +11,7 @@ require('babel-core/register');
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
-function createMainWindow () {
+var createMainWindow = () => {
   let win = new BrowserWindow({
     width: 600,
     height: 400
@@ -27,27 +27,27 @@ function createMainWindow () {
   return win;
 }
 
-function onClosed() {
+var onClosed = () => {
   // deref the window
   // for multiple windows store them in an array
   mainWindow = null;
-}
+};
 
 // prevent window being GC'd
 let mainWindow;
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('activate-with-no-open-windows', function () {
+app.on('activate-with-no-open-windows', () => {
   if (!mainWindow) {
     mainWindow = createMainWindow();
   }
 });
 
-app.on('ready', function () {
+app.on('ready', () => {
   mainWindow = createMainWindow();
 });

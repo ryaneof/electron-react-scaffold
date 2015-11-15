@@ -82,11 +82,13 @@ gulp.task('compile', function () {
   });
 });
 
-gulp.task('debug', ['script', 'style', 'watch'], function () {
-  electron.start();
+gulp.task('debug', function () {
+  runSequence('script', 'style', 'watch', function () {
+    electron.start();
 
-  gulp.watch([
-    './app/index.js',
-    './app/index.html'
-  ], electron.restart);
+    gulp.watch([
+      './app/index.js',
+      './app/index.html'
+    ], electron.restart);
+  });
 });

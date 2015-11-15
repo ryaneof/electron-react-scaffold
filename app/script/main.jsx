@@ -1,12 +1,13 @@
-var Router = require('director').Router;
+import { Router } from 'director';
+import { ExampleController } from './controllers/example-controller.jsx';
+
 var remote = window.require('remote');
 
 // routes
-var ExampleController = require('./controllers/example-controller.jsx');
 
 var routes = {
   '/': function () {
-    ExampleController.init();
+    new ExampleController().render();
   }
 };
 

@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
-  render: function () {
+export class DefaultTemplate extends React.Component {
+  render() {
     return (
       <div className="default-template">
         <div className="default-template-content">
@@ -10,4 +10,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+};

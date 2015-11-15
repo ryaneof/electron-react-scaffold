@@ -22,10 +22,6 @@
     "electron": "0.34.3",
     "atom-shell": "0.34.3"
   },
-  "presets": [
-    "es2015",
-    "react"
-  ],
   "dependencies": {
     "babel": "^6.0.15",
     "director": "^1.2.8",
