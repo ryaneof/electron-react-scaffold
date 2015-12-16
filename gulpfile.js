@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var gls = require('gulp-live-server');
+var eslint = require('gulp-eslint');
 var del = require('del');
 var mkdirp = require('mkdirp');
 var source = require('vinyl-source-stream');
@@ -43,7 +44,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./app/script/**/*.*', ['script']);
+  gulp.watch('./app/script/**/*.*', ['lint', 'script']);
   gulp.watch('./app/style/**/*.*', ['style']);
 });
 
@@ -82,8 +83,17 @@ gulp.task('compile', function () {
   });
 });
 
+gulp.task('lint', function () {
+  return gulp.src([
+    './app/script/**/*.*'
+  ])
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
+});
+
 gulp.task('debug', function () {
-  runSequence('script', 'style', 'watch', function () {
+  runSequence('lint', 'script', 'style', 'watch', function () {
     electron.start();
 
     gulp.watch([

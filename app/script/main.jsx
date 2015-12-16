@@ -1,8 +1,6 @@
 import { Router } from 'director';
 import { ExampleController } from './controllers/example-controller.jsx';
 
-var remote = window.require('remote');
-
 // routes
 
 var routes = {

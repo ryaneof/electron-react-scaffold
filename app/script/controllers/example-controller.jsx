@@ -11,4 +11,4 @@ export class ExampleController extends React.Component {
       </DefaultTemplate>, document.querySelector('.app-container')
     );
   }
-};
+}

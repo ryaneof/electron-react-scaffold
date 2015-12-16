@@ -10,4 +10,4 @@ export class DefaultTemplate extends React.Component {
       </div>
     );
   }
-};
+}

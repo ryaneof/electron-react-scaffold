@@ -6,5 +6,5 @@ export class ExampleComponent extends React.Component {
       <p>e.g. example component on #/</p>
     );
   }
-};
+}
 
