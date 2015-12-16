@@ -17,7 +17,7 @@ var createMainWindow = () => {
     height: 400
   });
 
-  win.loadUrl(`file://${__dirname}/index.html`);
+  win.loadURL(`file://${__dirname}/index.html`);
   // Toggle devtools when developing
   if (process.env.NODE_ENV == 'development') {
     win.openDevTools({ detach: true });
